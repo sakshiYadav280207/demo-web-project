@@ -1,0 +1,26 @@
+export default function NetflixClone() { const movies = [ { title: "Stranger Things", img: "https://via.placeholder.com/300x170" }, { title: "Money Heist", img: "https://via.placeholder.com/300x170" }, { title: "Wednesday", img: "https://via.placeholder.com/300x170" }, { title: "Dark", img: "https://via.placeholder.com/300x170" }, { title: "Lucifer", img: "https://via.placeholder.com/300x170" }, ];
+
+return ( <div className="bg-black min-h-screen text-white"> {/* Navbar */} <nav className="flex items-center justify-between px-6 py-4"> <h1 className="text-red-600 text-3xl font-bold">NETFLIX</h1> <button className="bg-red-600 px-4 py-2 rounded">Sign In</button> </nav>
+
+{/* Hero Section */}
+  <section className="text-center mt-20 px-4">
+    <h2 className="text-4xl font-bold mb-4">Unlimited movies, TV shows and more</h2>
+    <p className="text-lg mb-6">Watch anywhere. Cancel anytime.</p>
+    <button className="bg-red-600 px-6 py-3 rounded text-lg">Get Started</button>
+  </section>
+
+  {/* Movies Section */}
+  <section className="mt-16 px-6">
+    <h3 className="text-2xl font-semibold mb-4">Popular on Netflix</h3>
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      {movies.map((movie, index) => (
+        <div key={index} className="hover:scale-105 transition">
+          <img src={movie.img} alt={movie.title} className="rounded" />
+          <p className="mt-2 text-sm text-center">{movie.title}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</div>
+
+); }
